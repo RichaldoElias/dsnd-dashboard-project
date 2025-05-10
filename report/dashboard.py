@@ -1,17 +1,19 @@
 from fasthtml.common import *
 import matplotlib.pyplot as plt
 
+
 # Import QueryBase, Employee, Team from employee_events
 #### YOUR CODE HERE
-from employee_events import (
-    QueryBase,
-    Employee,
-    Team
-    )
+from employee_events.query_base import QueryBase
+from employee_events.employee import Employee
+from employee_events.team import Team
 
 # import the load_model function from the utils.py file
 #### YOUR CODE HERE
-from report.utils import load_model
+import sys
+sys.path.append('..')
+from utils import load_model
+
 
 """
 Below, we import the parent classes
@@ -97,11 +99,12 @@ class LineChart(MatplotlibViz):
         # Use the pandas .fillna method to fill nulls with 0
         #### YOUR CODE HERE
         data.fillna(0, inplace=True)
+        print(data.head(2))
         
         # User the pandas .set_index method to set
         # the date column as the index
         #### YOUR CODE HERE
-        data.set_index('event_date', inplace=True)
+        data = data.set_index('event_date')
         
         # Sort the index
         #### YOUR CODE HERE
@@ -137,7 +140,7 @@ class LineChart(MatplotlibViz):
         # Reference the base_components/matplotlib_viz file 
         # to inspect the supported keyword arguments
         #### YOUR CODE HERE
-        self.set_axis_styling(ax, border_color='black', font_color='black')
+        self.set_axis_styling(ax, bordercolor='black', fontcolor='black')
         
         # Set title and labels for x and y axis
         #### YOUR CODE HERE
@@ -207,7 +210,7 @@ class BarChart(MatplotlibViz):
         # to the `.set_axis_styling`
         # method
         #### YOUR CODE HERE
-        self.set_axis_styling(ax, border_color='black', font_color='black')
+        self.set_axis_styling(ax, bordercolor='black', fontcolor='black')
  
 # Create a subclass of combined_components/CombinedComponent
 # called Visualizations       
@@ -283,7 +286,7 @@ class Report(CombinedComponent):
 
 # Initialize a fasthtml app 
 #### YOUR CODE HERE
-app = FastHTMLApp()
+app = FastHTML()
 
 # Initialize the `Report` class
 #### YOUR CODE HERE

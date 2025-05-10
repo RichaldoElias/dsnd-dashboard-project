@@ -57,6 +57,9 @@ class QueryBase:
         # and return the result as a pandas dataframe
         # YOUR CODE HERE
         df = QueryMixin.pandas_query(self, sql_query)
+        print('---------------debugging------------------')
+        print(df.head())
+        print('---------------debugging------------------')
         # Return the dataframe
         # YOUR CODE HERE
         return df

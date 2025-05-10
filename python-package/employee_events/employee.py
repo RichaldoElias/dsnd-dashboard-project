@@ -93,5 +93,5 @@ class Employee(QueryBase):
         # Use the pandas_query method
         # from the QueryMixin class to execute the query
         # and return the result
-        return QueryMixin.pandas_query(query)
+        return QueryMixin.pandas_query(self,query)
     
