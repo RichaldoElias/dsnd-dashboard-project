@@ -1,7 +1,7 @@
 
-# Software Engineering for Data Scientists 
+# Udacity DATA SCIENTISTS Nanodegree
 
-This repository contains starter code for the **Software Engineering for Data Scientists** final project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
+This repository contains code for the second project of **Data Scientists Nanodegree** project. Please reference your course materials for documentation on this repository's structure and important files. Happy coding!
 
 ### Repository Structure
 ```
